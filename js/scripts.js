@@ -1,25 +1,36 @@
 function handleTriangle(event) {
   event.preventDefault();
-  let inputA = parseInt.document.getElementById("inputA");
-  let inputB = parseInt.document.getElementById("inputB");
-  let inputC = parseInt.document.getElementById("inputC");
+  let inputA = parseInt(document.querySelector("input#inputA").value);
+  let inputB = parseInt(document.querySelector("input#inputB").value);
+  let inputC = parseInt(document.querySelector("input#inputC").value);
   let output = document.querySelector("output")
-
-  function triangleCalc() {
-    if (inputA === inputB && inputB === inputC) {
-      output = "equilateral"
-    } else if ((inputA ===  inputB && !inputC) || (inputA ===  inputC && !inputB) || (inputB === inputC && !inputA)) {
-      output = "isosceles"
-    } else if (inputA !== inputB && inputA !== inputC && inputB !== inputC) {
-      output = "scalene" 
-    } else if (inputA + inputB <= inputC){
-      output = "not a triangle"
-    } else if (inputB + inputC <= inputA){
-      output = "not a triangle"
-    } else if (inputA + inputC <= inputB){
-      output = "not a triangle"
-    }
-  }
+  
+  console.log("A = " + inputA)
+  console.log("B = " + inputB)
+  console.log("C = " + inputC)
+  console.log("output = " + output)
+  
+  // function triangleCalc(event) {
+    console.log("It hasn't broken yet")
+    if ((inputA + inputB <= inputC) || (inputB + inputC <= inputA) || (inputA + inputC <= inputB)){
+    output = "not a triangle"
+    }  
+    else if ((inputA === inputB && inputA !== inputC) || (inputA ===  inputC && inputA !== inputB) || (inputB === inputC && inputB !== inputA)) {
+      console.log("It hasn't broken yet 3")
+      output = "isosceles";
+    } 
+    else if (inputA === inputB && inputB === inputC) {
+      output = "equilateral";
+      console.log("It hasn't broken yet 2")
+    } 
+    
+    else if (inputA !== inputB !== inputC !== inputA) {
+      output = "scalene" ;
+      console.log("It hasn't broken yet 4")
+    }  
+    
+    
+  
   document.getElementById("output").innerText = output;
 }
 
