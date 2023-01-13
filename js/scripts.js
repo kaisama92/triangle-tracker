@@ -27,7 +27,7 @@ function handleTriangle(event) {
     else if (inputA !== inputB !== inputC !== inputA) {
       output = "scalene" ;
       console.log("It hasn't broken yet 4")
-    }  
+    }   
     
     
   
